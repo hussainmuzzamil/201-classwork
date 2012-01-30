@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+    <script type="text/javascript" src="jquery-1.7.1.min.js" ></script>
+
+
+    <title>Testing Ajax with Node.js</title>
+    <script type="text/javascript">
+        $(function (){
+
+            //alert("hello");
+            //alert($("#test").val);
+            $("#submit").on("click",function (){
+                //alert($("#name").val());
+                $.ajax({
+                    url: "/testAjaxAction",
+                    data: {name:$("#name").val()},
+                    success: function(data){
+                        //alert("done "+data.toString());
+                        var da = JSON.parse(data);
+                        //alert(da);
+                        //alert(JSON.parse(da));
+                        //alert(da['hello']);
+                        //alert(JSON.parse(data));
+                        $("#name").val(da.hello);
+                    }
+                });
+            });
+
+
+        });
+
+
+    </script>
+</head>
+<body>
+
+<table>
+    <tr>
+        <td>Name:</td><td>&nbsp;</td>
+        <td><input type="text" id="name" /></td>
+
+    </tr>
+
+    <tr>
+       <td colspan="3">
+        <input type="button" value="Submit" id="submit" />
+       </td>
+
+    </tr>
+</table>
+
+
+</body>
+</html>

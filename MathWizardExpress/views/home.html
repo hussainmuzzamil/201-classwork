@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Demo Express <%= abc%></title>
+    <script>
+
+        //alert("hello there");
+        function hellotest(){
+            alert("Hello calling hellotesting from client")
+        }
+
+    </script>
+</head>
+<body>
+
+<b>Hello Express world
+<% if(true) {%>
+    <h2>yes its ture</h2>
+<%} else {    %>
+   <h2> hello </h2>
+<%}%>
+
+    <%= hello %> <br>
+
+    <%= xyz %>
+
+    <%- hello %> <br>
+</b>
+
+
+<input type="button" value="Submit" onclick="hellotest()" />
+
+<a href="testAjax">Test Ajax</a>
+
+</body>
+</html>
